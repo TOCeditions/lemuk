@@ -3,10 +3,10 @@
     <template slot="head">
       <div
         id="head"
-        class="uk-background-norepeat uk-section-secondary uk-background-blend-luminosity uk-background-cover uk-background-center uk-section uk-flex-middle uk-section-xlarge _uk-light"
+        class="uk-background-norepeat uk-section-secondary uk-background-blend-luminosity uk-background-cover uk-background-center uk-section uk-flex-middle uk-text-right uk-section-xlarge _uk-light"
       >
         <div class="uk-container">
-          <h1 class="uk-title uk-margin-large">{{ $metaInfo.title }}</h1>
+          <h1 class="uk-heading-medium uk-text-light uk-margin-large">{{ $metaInfo.title }}</h1>
         </div>
       </div>
     </template>
