@@ -1,0 +1,39 @@
+// 1. Your custom variables and variable overwrites.
+$global-color: #383737;
+$global-emphasis-color: #163D63;
+$global-muted-color: #777777;
+$global-danger-background: #BA1C3A;
+$global-secondary-background: #052C62;
+$global-border: #CECECE;
+
+// 2. Import default variables and available mixins.
+@import "uikit/src/scss/variables-theme.scss";
+@import "uikit/src/scss/mixins-theme.scss";
+
+// 3. Your custom mixin overwrites.
+
+
+@mixin hook-button {
+    border-radius: 30px;
+}
+<<<<<<< HEAD
+$base-em-color: inherit;
+
+p{
+    text-align: justify;
+} 
+
+=======
+
+// @mixin hook-nav() {
+// @nav-default-item-color: #383737;
+// @nav-default-item-hover-color: #1C1B1B;
+// }
+
+// @mixin hook-navar {
+// $navbar-nav-item-color: #464441;
+// }
+>>>>>>> e6868dea901f57c38258334baa8b035ae3e914db
+
+// 4. Import UIkit.
+@import "uikit/src/scss/uikit-theme.scss";

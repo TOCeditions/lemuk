@@ -1,0 +1,76 @@
+<template>
+  <Layout>
+    <template slot="head">
+      <div
+        id="head"
+        class="uk-background-norepeat uk-section-secondary uk-background-blend-luminosity uk-background-cover uk-background-center uk-section uk-flex-middle uk-section-xlarge _uk-light"
+      >
+        <div class="uk-container">
+          <h1 class="uk-title uk-margin-large">{{ $metaInfo.title }}</h1>
+        </div>
+      </div>
+    </template>
+
+    <div id="alls" v-for="edge in $page.art.edges" :key="edge.node.id">
+      <h2 class="uk-h3" v-html="edge.node.title"></h2>
+
+      <div class="uk-text-default" v-html="edge.node.intro"></div>
+      <div class="uk-padding-top" v-html="edge.node.contents"></div>
+      <div class="uk-padding-top uk-text-small" v-html="edge.node.ilustracja.private_hash"></div>
+    </div>
+  </Layout>
+</template>
+
+<script>
+export default {
+  //    getImgUrl(pic) {
+  //     return require('https://lem.toc-editions.com/lem-biblio/assets/'+pic)
+  // };
+  metaInfo() {
+    return this.$seo({
+      title: "Strona główna", // Uses the titleTemplate in Gridsome config
+      description: "APP Bibliografia Stanisława Lema",
+      keywords: "Lem,bibliografia",
+      openGraph: {
+        title: "Lem Bibliografia",
+        type: "website",
+      },
+      twitter: {
+        title: "Lem Bibliografia",
+        type: "summary",
+      },
+      link: [], // any links
+      script: [], // any scripts
+    });
+  },
+};
+</script>
+
+<style>
+.uk-page-black > * {
+  @apply uk-light;
+}
+#head {
+  background-image: url("https://lem.toc-editions.com/lem-biblio/assets/tdd1gvol67ko0gck");
+}
+</style>
+
+<page-query>
+query {
+  art: allCmsTeksty(filter: { id: { eq: "1" }}) {
+    edges {
+      node {
+        id
+        title
+        intro
+        contents
+        slug
+        ilustracja {
+          private_hash
+        }  
+      }
+    }
+  }
+}
+
+</page-query>
