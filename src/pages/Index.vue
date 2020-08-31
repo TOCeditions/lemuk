@@ -23,9 +23,6 @@
 
 <script>
 export default {
-  //    getImgUrl(pic) {
-  //     return require('https://lem.toc-editions.com/lem-biblio/assets/'+pic)
-  // };
   metaInfo() {
     return this.$seo({
       title: "Strona główna", // Uses the titleTemplate in Gridsome config
