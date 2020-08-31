@@ -12,7 +12,8 @@
     </template>
 
     <div id="alls" v-for="edge in $page.art.edges" :key="edge.node.id">
-      <h2 class="uk-h3" v-html="edge.node.title"></h2>
+      <h2 class="uk-h1 uk-margin-remove uk-text-uppercase" v-html="edge.node.title"></h2>
+      <h3 class="uk-h3 uk-margin-small uk-margin-large-bottom" v-html="edge.node.subtitle"></h3>
 
       <div class="uk-text-default" v-html="edge.node.intro"></div>
       <div class="uk-padding-top" v-html="edge.node.contents"></div>
@@ -59,6 +60,7 @@ query {
       node {
         id
         title
+        subtitle
         intro
         contents
         slug
