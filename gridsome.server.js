@@ -19,7 +19,7 @@ const slugify = require('slugify');
 module.exports = function (api) {
 	try {
 		api.loadSource(async actions => {
-			const { data } = await axios.get('https://lem.toc-editions.com/lem-biblio/collections')
+			const { data } = await axios.get('https://lemadmin.toc-editions.com/lem-biblio/collections')
 			const collection = actions.addCollection('LemColls')
 			let count = 1;
 			for (item of data.data) {

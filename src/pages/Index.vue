@@ -52,7 +52,7 @@ export default {
   @apply uk-light;
 }
 #head {
-  background-image: url("https://lem.toc-editions.com/lem-biblio/assets/tdd1gvol67ko0gck");
+  background-image: url("https://lemadmin.toc-editions.com/lem-biblio/assets/tdd1gvol67ko0gck");
 }
 </style>
 
