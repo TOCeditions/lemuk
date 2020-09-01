@@ -1,7 +1,11 @@
 <template>
-  <ul class="uk-nav uk-navuk-navbar-dropdown-nav">
+  <ul class="uk-nav uk-nav-default uk-text-right">
     <li v-for="edge in $static.navs.edges" :key="edge.node.id">
-      <g-link :to="{path: '/'+edge.node.link+'/'} ">{{ edge.node.title }}</g-link>
+      <g-link :to="{path: '/'+edge.node.link+'/'} ">
+        <strong>{{ edge.node.title }}</strong>
+        <br />
+        <span class="uk-text-small">{{ edge.node.note }}</span>
+      </g-link>
     </li>
   </ul>
 </template>
