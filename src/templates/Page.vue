@@ -2,9 +2,9 @@
   <Layout>
     <template slot="head">
       <HeadSection
-        title="Zapraszamy"
+        v-bind:title="$page.art.title"
         v-bind:bcg="$page.art.ilustracja.private_hash"
-        class="uk-section-secondary uk-section-xlarge"
+        class="uk-section-secondary"
       />
     </template>
 

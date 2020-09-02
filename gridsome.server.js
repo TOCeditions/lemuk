@@ -42,13 +42,49 @@ module.exports = function (api) {
 		console.log(error)
 	}
 
+	module.exports = function (api) {
+		api.loadSource(async store => {
+			store.addMetadata('info', 'Lem - Biblografia')
+		})
+	}
+
 
 	api.loadSource(({ addCollection }) => {
 		// Use the Data Store API here: https://gridsome.org/docs/data-store-api/
 	})
 
-	api.createPages(({ createPage }) => {
-		// Use the Pages API here: https://gridsome.org/docs/pages-api/
+	api.createPages(async ({ graphql, createPage }) => {
+		const { data } = await graphql(`{
+      allDzielaLema {
+        edges {
+          node {
+            id
+			slug
+			title
+			description
+			tabele
+          }
+        }
+      }
+    }`)
+
+		data.allDzielaLema.edges.forEach(({ node }) => {
+			createPage({
+				path: `/dziela-lema/${node.id}`,
+				component: './src/templates/Collection.vue',
+				context: {
+					id: node.id,
+					tabela: node.tabele,
+					title: node.title
+				},
+				queryVariables: {
+					id: node.id,
+					tabela: node.tabele
+				},
+
+			})
+		})
 	})
 }
+
 

@@ -6,7 +6,7 @@
 
 module.exports = {
 	siteName: 'Bibliografia Stanisława Lema',
-	siteUrl: 'https://lemadmin.toc-editions.com',
+	siteUrl: 'https://lem.toc-editions.com',
 	siteDescription: 'Aplikacja bibliograficzna dzieł Stanisława Lema',
 
 
@@ -42,6 +42,8 @@ module.exports = {
 				email: 'toc@toc-editions.com',
 				password: 'Magoo#2k15',
 				camelCase: false,
+				// shallowCamelCase: true,
+				// pascalTypes: true,
 				routes: {
 				},
 			},

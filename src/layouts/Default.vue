@@ -1,10 +1,13 @@
 <template>
   <div id="tm-page">
-    <div>
-      <Navbar />
-    </div>
+    <NavbarMenu />
     <div class="head" v-if="$slots.head">
-      <slot name="head"></slot>
+      <slot name="head">
+        <HeadSection title=" " />
+      </slot>
+    </div>
+    <div v-else>
+      <HeadSection v-bind:title="$metaInfo.title" />
     </div>
     <div class="uk-container uk-padding-large">
       <div class="uk-grid uk-grid-default" uk-grid>
@@ -18,13 +21,8 @@
         </div>
       </div>
     </div>
-    <Footer />
-    <Offcanvas />
   </div>
 </template>
-
-
-
 
 <static-query>
   query {
@@ -50,17 +48,30 @@
 </static-query>
 
 <script>
-import Navbar from "~/layouts/partials/Navbar.vue";
+import HeadSection from "~/components/headSection.vue";
 import Kolekcje from "~/layouts/partials/Kolekcje-nav.vue";
-import Offcanvas from "~/layouts/partials/Offcanvas.vue";
-import Footer from "~/layouts/partials/Footer.vue";
 
 export default {
+  name: "Domyślny",
   components: {
-    Navbar,
     Kolekcje,
-    Footer,
-    Offcanvas,
+    HeadSection,
+  },
+  metaInfo() {
+    return this.$seo({
+      // title: "",
+      description: "APP Bibliografia Stanisława Lema",
+      keywords: "Lem,bibliografia",
+
+      openGraph: {
+        title: "Lem Bibliografia",
+        type: "website",
+      },
+      twitter: {
+        title: "Lem Bibliografia",
+        type: "summary",
+      },
+    });
   },
 };
 </script>

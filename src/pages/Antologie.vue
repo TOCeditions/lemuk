@@ -1,13 +1,8 @@
 <template>
   <Layout>
     <template slot="head">
-      <div class="uk-section uk-section-primary uk-section-large">
-        <div class="uk-container">
-          <h1 class="uk-title uk-margin-large">Tytuł: {{ name }}</h1>
-        </div>
-      </div>
+      <HeadSection v-bind:title="title" class="uk-section-primary" />
     </template>
-
     <ul v-if="$page.ants.edges.length" class="uk-list uk-list-divider uk-list-large">
       <li v-for="book in $page.ants.edges" :key="book.node.ROK" class="uk-hover">
         <div class="uk-grid">
@@ -54,12 +49,13 @@
 
 
 <script>
-import axios from "axios";
+import HeadSection from "~/components/headSection.vue";
 import { Pager } from "gridsome";
 export default {
+  name: "Antologie",
   data() {
     return {
-      name: "Antologie Lemowskie",
+      title: "Antologie Lemowskie",
       showid: false,
       antologie: null,
       pagerIle: 2,
@@ -68,19 +64,10 @@ export default {
   metaInfo: {
     title: "Antologie Lemowskie",
   },
-  async mounted() {
-    // try {
-    const results = await axios.get(
-      "https://lem.toc-editions.com/lem-biblio/items/Antologie"
-    );
 
-    this.antologie = results.data.data;
-    // } catch (error) {
-    //   console.log(error);
-    // }
-  },
   components: {
     Pager,
+    HeadSection,
   },
 };
 </script>
@@ -122,3 +109,4 @@ export default {
   }
 }
 </page-query>
+
