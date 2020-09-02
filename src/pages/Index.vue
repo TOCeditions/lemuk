@@ -70,12 +70,12 @@ export default {
   },
   //
   data() {
-    var hasher = $page.art.ilustracja.private_hash;
-    var apiUrl = "https://lemadmin.toc-editions.com/lem-biblio/assets/";
+    // var hasher = $page.art.ilustracja.private_hash;
+    // var apiUrl = "https://lemadmin.toc-editions.com/lem-biblio/assets/";
     return {
       styler: {
         color: "red",
-        backgroundImage: "url('" + apiUrl + "')",
+        // backgroundImage: "url('" + apiUrl + "')",
       },
     };
   },
