@@ -7,6 +7,7 @@
 
 const axios = require('axios');
 const slugify = require('slugify');
+slugify.extend({ '_': '-' });
 // slugify('some string', {
 // 	replacement: '-',  // replace spaces with replacement character, defaults to `-`
 // 	remove: undefined, // remove characters that match regex, defaults to `undefined`
@@ -24,7 +25,7 @@ module.exports = function (api) {
 			let count = 1;
 			for (item of data.data) {
 				if (item.managed) {
-					var slink = slugify(item.collection, { lower: true });
+					var slink = slugify(item.collection, { lower: true, strict: false });
 
 					collection.addNode({
 						id: count,
@@ -53,38 +54,38 @@ module.exports = function (api) {
 		// Use the Data Store API here: https://gridsome.org/docs/data-store-api/
 	})
 
-	api.createPages(async ({ graphql, createPage }) => {
-		const { data } = await graphql(`{
-      allDzielaLema {
-        edges {
-          node {
-            id
-			slug
-			title
-			description
-			tabele
-          }
-        }
-      }
-    }`)
+	// api.createPages(async ({ graphql, createPage }) => {
+	// 	const { data } = await graphql(`{
+	//   allDzielaLema {
+	//     edges {
+	//       node {
+	//         id
+	// 		slug
+	// 		title
+	// 		description
+	// 		tabele
+	//       }
+	//     }
+	//   }
+	// }`)
 
-		data.allDzielaLema.edges.forEach(({ node }) => {
-			createPage({
-				path: `/dziela-lema/${node.id}`,
-				component: './src/templates/Collection.vue',
-				context: {
-					id: node.id,
-					tabela: node.tabele,
-					title: node.title
-				},
-				queryVariables: {
-					id: node.id,
-					tabela: node.tabele
-				},
+	// 	data.allDzielaLema.edges.forEach(({ node }) => {
+	// 		createPage({
+	// 			path: `/dziela_lema/${node.id}`,
+	// 			component: './src/templates/Collection.vue',
+	// 			context: {
+	// 				id: node.id,
+	// 				tabela: node.tabele,
+	// 				title: node.title
+	// 			},
+	// 			queryVariables: {
+	// 				id: node.id,
+	// 				tabela: node.tabele
+	// 			},
 
-			})
-		})
-	})
+	// 		})
+	// 	})
+	// })
 }
 
 

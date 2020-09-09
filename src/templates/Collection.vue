@@ -6,8 +6,8 @@
 
     <div id="alls">
       <div class="uk-width-4-5@m">
-        <h2 class="uk-h1 uk-margin-remove uk-text-uppercase" sv-html="$page.art.title">Tytul</h2>
-        <h3 class="uk-h3 uk-margin-small uk-margin-large-bottom" sv-html="$page.art.subtitle">Intro</h3>
+        <h2 class="uk-h1 uk-margin-remove uk-text-uppercase" v-html="$page.art.title">Tytul</h2>
+        <h3 class="uk-h3 uk-margin-small uk-margin-large-bottom" v-html="$page.art.subtitle">Intro</h3>
       </div>
       <div class="uk-text-default" sv-html="$page.art.intro">Wstep</div>
       <div class="uk-padding-top" sv-html="$page.art.contents">Contents</div>
@@ -19,7 +19,7 @@
 
 <page-query>
   query{
-  dzielaLema (id: 1) {
+  art: dzielaLema (id: 1) {
     id
     title
   }
@@ -37,7 +37,7 @@ export default {
   },
   metaInfo() {
     return this.$seo({
-      title: $context.title,
+      title: "$context.title",
       description: "APP Bibliografia Stanisława Lema",
       keywords: "Lem,bibliografia",
 

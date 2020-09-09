@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-	siteName: 'Bibliografia Stanisława Lema',
+	siteName: 'Bibliografia polska Stanisława Lema 1945-2000',
 	siteUrl: 'https://lem.toc-editions.com',
 	siteDescription: 'Aplikacja bibliograficzna dzieł Stanisława Lema',
 
@@ -42,8 +42,8 @@ module.exports = {
 				email: 'toc@toc-editions.com',
 				password: 'Magoo#2k15',
 				camelCase: false,
-				// shallowCamelCase: true,
-				// pascalTypes: true,
+				shallowCamelCase: false,
+				pascalTypes: false,
 				routes: {
 				},
 			},
