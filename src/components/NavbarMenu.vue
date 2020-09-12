@@ -13,9 +13,7 @@
             <span class="uk-visible@m uk-text-primary uk-h4 uk-margin-remove">
               <strong>{{ $static.metadata.siteName }}</strong>
             </span>
-            <span
-              class="uk-hidden@m uk-text-secondary uk-h4 uk-margin-remove"
-            >{{ $static.metadata.siteName }}</span>
+            <span class="uk-hidden@m uk-text-secondary uk-h4 uk-margin-remove">Bibliografia</span>
           </g-link>
         </div>
 
@@ -37,28 +35,29 @@
               <a href="#">Item</a>
             </li>
           </ul>
-
-          <a
-            class="uk-navbar-toggle"
-            aria-label="search"
-            href="#modal"
-            uk-icon="icon: question"
-            uk-toggle
-          ></a>
-          <a
-            class="uk-navbar-toggle"
-            aria-label="pomoc"
-            href="#modal-search"
-            uk-search-icon
-            uk-toggle
-          ></a>
-          <a
-            class="uk-navbar-toggle"
-            aria-label="baza"
-            href="#offcanvas"
-            uk-navbar-toggle-icon
-            uk-toggle
-          ></a>
+          <div class="uk-hidden@m uk-navar-nav">
+            <!-- <a
+              class="uk-navbar-toggle"
+              aria-label="search"
+              href="#modal"
+              uk-icon="icon: question"
+              uk-toggle
+            ></a>
+            <a
+              class="uk-navbar-toggle"
+              aria-label="pomoc"
+              href="#modal-search"
+              uk-search-icon
+              uk-toggle
+            ></a>-->
+            <a
+              class="uk-navbar-toggle"
+              aria-label="baza"
+              href="#offcanvas"
+              uk-navbar-toggle-icon
+              uk-toggle
+            ></a>
+          </div>
         </div>
       </div>
     </div>
