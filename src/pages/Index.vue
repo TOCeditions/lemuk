@@ -5,7 +5,7 @@
         title="Zapraszamy"
         v-bind:bcg="$page.art.ilustracja.private_hash"
         big="true"
-        class="uk-section-muted uk-section-xlarge uk-background-blend-musltiply uk-background-fixed"
+        class="uk-section-muted uk-section-xlarge uk-background-blend-musltiply"
       />
     </template>
 

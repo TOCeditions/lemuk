@@ -2,7 +2,7 @@
   <div
     id="head"
     v-bind:style="styler"
-    class="uk-section-primary uk-background-norepeat uk-background-cover uk-background-center uk-section uk-flex-middle uk-section-large"
+    class="uk-section-primary uk-background-norepeat uk-background-fixed uk-background-cover uk-background-center uk-section uk-flex-middle uk-section-large"
   >
     <div class="uk-container">
       <h1
