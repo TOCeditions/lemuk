@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <template slot="head">
-      <HeadSection v-bind:title="title" class="uk-section-primary" />
+      <HeadSection v-bind:title="title" class="uk-section-large" />
     </template>
     <ul v-if="$page.ants.edges.length" class="uk-list uk-list-divider uk-list-large">
       <li v-for="book in $page.ants.edges" :key="book.node.ROK" class="uk-hover">

@@ -1,9 +1,12 @@
 // 1. Your custom variables and variable overwrites.
 $global-color: #383737;
+
 $global-emphasis-color: #163D63;
 $global-muted-color: #777777;
 $global-danger-background: #BA1C3A;
-$global-secondary-background: #052C62;
+$global-primary-color: #0071bc;
+$global-primary-background: #0071bc;
+$global-secondary-background: #15468a;
 $global-border: #CECECE;
 
 // 2. Import default variables and available mixins.

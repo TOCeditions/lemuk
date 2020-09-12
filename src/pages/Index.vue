@@ -4,11 +4,12 @@
       <HeadSection
         title="Zapraszamy"
         v-bind:bcg="$page.art.ilustracja.private_hash"
-        class="uk-section-secondary uk-section-xlarge"
+        big="true"
+        class="uk-section-muted uk-section-xlarge uk-background-blend-musltiply uk-background-fixed"
       />
     </template>
 
-    <div id="alls">
+    <div id="alls" class>
       <div class="uk-width-4-5@m">
         <h2 class="uk-h1 uk-margin-remove uk-text-uppercase" v-html="$page.art.title"></h2>
         <h3 class="uk-h3 uk-margin-small uk-margin-large-bottom" v-html="$page.art.subtitle"></h3>
@@ -44,9 +45,11 @@ import HeadSection from "~/components/headSection.vue";
 
 export default {
   name: "HomePage",
+
   components: {
     HeadSection,
   },
+
   metaInfo() {
     return this.$seo({
       title: "Strona główna",

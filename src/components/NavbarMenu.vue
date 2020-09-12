@@ -10,12 +10,17 @@
               src="~/img/logo/lem-icon.svg"
               width="60"
             />
-            <span class="uk-visible@m">{{ $static.metadata.siteName }}</span>
+            <span class="uk-visible@m uk-text-primary uk-h4 uk-margin-remove">
+              <strong>{{ $static.metadata.siteName }}</strong>
+            </span>
+            <span
+              class="uk-hidden@m uk-text-secondary uk-h4 uk-margin-remove"
+            >{{ $static.metadata.siteName }}</span>
           </g-link>
         </div>
 
         <div class="uk-navbar-right">
-          <ul class="uk-navbar-nav">
+          <ul class="uk-navbar-nav uk-visible@m">
             <li class="uk-active">
               <a href="#">Active</a>
             </li>

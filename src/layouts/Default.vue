@@ -1,6 +1,5 @@
 <template>
-  <div id="tm-page">
-    <NavbarMenu />
+  <div id="main-page">
     <div class="head" v-if="$slots.head">
       <slot name="head">
         <HeadSection title=" " />
@@ -9,14 +8,16 @@
     <div v-else>
       <HeadSection v-bind:title="$metaInfo.title" />
     </div>
-    <div class="uk-container uk-padding-large">
-      <div class="uk-grid uk-grid-default" uk-grid>
-        <div class="sidebar uk-width-1-4@m">
-          <Kolekcje />
-        </div>
-        <div class="uk-width-expand">
-          <div id="main2top" class="uk-tile uk-tile-medium uk-tile-default uk-box-shadow-medium">
-            <slot />
+    <div id="main-section" class="uk-section uk-section-small">
+      <div class="uk-container suk-padding-large">
+        <div class="uk-grid uk-grid-default" uk-grid>
+          <div class="sidebar uk-width-1-4@m uk-visible@m">
+            <Kolekcje />
+          </div>
+          <div class="uk-width-expand">
+            <div id="main2top" class="uk-tile uk-tile-small uk-tile-default uk-box-shadow-medium">
+              <slot />
+            </div>
           </div>
         </div>
       </div>
@@ -82,8 +83,14 @@ export default {
   width: 60px;
   height: 60px;
 }
-#main2top {
-  margin-top: -9rem;
-  border-radius: 20px 20px 0 0;
+@media screen and (min-width: 960px) {
+  #main2top {
+    margin-top: -64px;
+    border-radius: 20px;
+  }
+  #main-section {
+    margin-bottom: -24px;
+    padding-bottom: 0;
+  }
 }
 </style>

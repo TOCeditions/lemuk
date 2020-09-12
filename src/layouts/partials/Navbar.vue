@@ -10,7 +10,7 @@
               src="~/img/logo/lem-icon.svg"
               width="60"
             />
-            <span class="uk-visible@m">{{ $static.metadata.siteName }}</span>
+            <span class="uk-visible@m uk-text-pimary uk-h4">{{ $static.metadata.siteName }}</span>
           </g-link>
         </div>
 
